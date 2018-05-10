@@ -1,13 +1,23 @@
 import React from 'react';
 import Card from '../../stateful-components/card/index';
 
-const MainContainer = (props) => {
+const MainContainer = ({categoryData}) => {
+  const displayCards = categoryData.map((category, index) => {
+    console.log('catdata', category)
+    return <Card {...category} key={category + index} />;
+  });
 
-  // const displayCards = 
+    
+
   return (
-    <div>hey</div>
+    <div>
+      {displayCards}
+    </div>
+  );
+};
 
-  )
-}
+
+
+
 
 export  default MainContainer;
