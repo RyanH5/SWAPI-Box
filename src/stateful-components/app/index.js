@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">SWAPI-Box</h1>
+          <img src="https://fontmeme.com/permalink/180510/370a53d5d49ac953317d55bb5854b00e.png" />
           <Buttons updateCards={this.updateCards}/>
         </header>
         {(this.state.currentCategory !== '') && <MainContainer 
