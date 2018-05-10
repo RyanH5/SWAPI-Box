@@ -12,14 +12,16 @@ class App extends Component {
     this.state = {
       people: [],
       vehicles: [],
-      planets: []
+      planets: [],
+      currentCategory: ''
     };
   }
 
   updateCards = async (category) => {
     const selectedStarWarsData = await DataCleaner(category);
     this.setState({
-      [category]: selectedStarWarsData
+      [category]: selectedStarWarsData,
+      currentCategory: category
     });
   }
    
@@ -30,11 +32,10 @@ class App extends Component {
           <h1 className="App-title">SWAPI-Box</h1>
           <Buttons updateCards={this.updateCards}/>
         </header>
-        <MainContainer 
-          people={this.state.people}
-          vehicles={this.state.vehicles}
-          planets={this.state.planets}
-        />
+        {(this.state.currentCategory !== '') && <MainContainer 
+          categoryData={this.state[this.state.currentCategory]}
+        />}
+        
         <ScrollingText />
       </div>
     );
