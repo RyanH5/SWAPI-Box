@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src="https://fontmeme.com/permalink/180510/370a53d5d49ac953317d55bb5854b00e.png" />
+          <img className="swampi-title" src="https://fontmeme.com/permalink/180510/370a53d5d49ac953317d55bb5854b00e.png" />
           <Buttons updateCards={this.updateCards}/>
         </header>
         {(this.state.currentCategory !== '') && <MainContainer 
@@ -37,6 +37,7 @@ class App extends Component {
         />}
         
         <ScrollingText />
+        <img className="dashboard-pic" src="http://blog.ocad.ca/wordpress/digf6l01-fw201402-01/files/2014/10/tumblr_larntzqOpV1qz5zvo.png" />
       </div>
     );
   }
