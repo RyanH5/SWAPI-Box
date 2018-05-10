@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../../stateful-components/card/index';
+import './styles.css';
 
 const MainContainer = ({categoryData}) => {
   const displayCards = categoryData.map((category, index) => {
@@ -10,7 +11,7 @@ const MainContainer = ({categoryData}) => {
     
 
   return (
-    <div>
+    <div className="card-container">
       {displayCards}
     </div>
   );
