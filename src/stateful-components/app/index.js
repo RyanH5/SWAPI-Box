@@ -4,6 +4,7 @@ import Buttons from '../../stateless-components/buttons/index';
 import PropTypes from 'prop-types';
 import ScrollingText from '../scrollingText/index';
 import { DataCleaner } from '../../cleaner/cleaner';
+import MainContainer from '../../stateless-components/mainContainer/index';
 
 class App extends Component {
   constructor(props) {
@@ -15,9 +16,12 @@ class App extends Component {
     };
   }
 
-  updateCards = (category) => {
+  updateCards = async (category) => {
+    const cat = await DataCleaner(category);
+    console.log('category', category);
+    console.log('cat', cat);
     this.setState({
-      [category]: DataCleaner(category)
+      [category]: cat
     });
   }
    
@@ -28,9 +32,12 @@ class App extends Component {
           <h1 className="App-title">SWAPI-Box</h1>
           <Buttons updateCards={this.updateCards}/>
         </header>
-        <main>
-          <ScrollingText />
-        </main>
+        <MainContainer 
+          title={this.state.title}
+          vehicles={this.state.vehicles}
+          planets={this.state.planets}
+        />
+        <ScrollingText />
       </div>
     );
   }
