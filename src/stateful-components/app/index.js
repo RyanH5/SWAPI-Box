@@ -17,11 +17,9 @@ class App extends Component {
   }
 
   updateCards = async (category) => {
-    const cat = await DataCleaner(category);
-    console.log('category', category);
-    console.log('cat', cat);
+    const selectedStarWarsData = await DataCleaner(category);
     this.setState({
-      [category]: cat
+      [category]: selectedStarWarsData
     });
   }
    
@@ -33,7 +31,7 @@ class App extends Component {
           <Buttons updateCards={this.updateCards}/>
         </header>
         <MainContainer 
-          title={this.state.title}
+          people={this.state.people}
           vehicles={this.state.vehicles}
           planets={this.state.planets}
         />
