@@ -5,7 +5,7 @@ const fetchStarWarsData = async (category) => {
   fetch(url);
   const response = await fetch(url);
   const info = await response.json();
-	return info;
+  return info;
 }; 
 
 const fetchPeopleData = async (info) => {
@@ -30,10 +30,6 @@ const fetchPeopleData = async (info) => {
 const fetchVehiclesData = async (info) => {
   const allVehicles = info.results;
   const unresolvedVehicleData = allVehicles.map(async (vehicle) => {
-    // const homeworldResponse = await fetch(person.homeworld);
-    // const parsedHomeworld = await homeworldResponse.json();
-    // const speciesResponse = await fetch(person.species);
-    // const parsedSpecies = await speciesResponse.json();
 
     return {
       name: vehicle.name,
@@ -46,28 +42,37 @@ const fetchVehiclesData = async (info) => {
   return Promise.all(unresolvedVehicleData);
 };
 
-// const fetchPlanetsData = async (info) => {
-//   const peopleArr = info.results;
-//   const unresolvedPeopleData = peopleArr.map(async (person) => {
-//     const homeworldResponse = await fetch(person.homeworld);
-//     const parsedHomeworld = await homeworldResponse.json();
-//     const speciesResponse = await fetch(person.species);
-//     const parsedSpecies = await speciesResponse.json();
+const fetchPlanetsData = async (info) => {
+  const allPlanets = info.results;
+  const unresolvedPlanetData = allPlanets.map(async (planet, index) => {
+    const residentData = await getResidents(planet);
+      
+    return {
+      name: planet.name,
+      terrain: planet.terrain,
+      population: planet.population,
+      climate: planet.climate,
+      residents: residentData,
+      id: `people${index}`
+    };
+  });
 
-//     return {
-//       name: person.name,
-//       homeworld: parsedHomeworld.name,
-//       species: parsedSpecies.name,
-//       population: parsedHomeworld.population
-//     };
-//   });
+  return Promise.all(unresolvedPlanetData);
+};
 
-//   return Promise.all(unresolvedPeopleData);
-// };
+const getResidents = async (planet) => {
+  const unresolvedResidents = planet.residents.map(async (resident) => {
+    const residentsResponse = await fetch(resident);
+    const parsedResidents = await residentsResponse.json();
+    return parsedResidents.name;
+  });
+  return Promise.all(unresolvedResidents)
+};
 
 export {
   fetchStarWarsData,
   fetchPeopleData,
-  fetchVehiclesData
-}
+  fetchVehiclesData,
+  fetchPlanetsData
+};
   

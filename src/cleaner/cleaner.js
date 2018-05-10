@@ -1,4 +1,4 @@
-import { fetchStarWarsData, fetchPeopleData, fetchVehiclesData }  from '../api/index';
+import { fetchStarWarsData, fetchPeopleData, fetchVehiclesData, fetchPlanetsData }  from '../api/index';
 
 const DataCleaner = async (category) => {
   const info = await fetchStarWarsData(category);
@@ -13,10 +13,10 @@ const DataCleaner = async (category) => {
     return resolved;  
   }
 
-  // if (category === 'planets') {
-  //   const resolved = await fetchPlanetsData(info);
-  //   return resolved;  
-  // }
+  if (category === 'planets') {
+    const resolved = await fetchPlanetsData(info);
+    return resolved;  
+  }
 };
 
 // const fetchPeopleData = async (info) => {
