@@ -4,11 +4,8 @@ import './styles.css';
 
 const MainContainer = ({categoryData}) => {
   const displayCards = categoryData.map((category, index) => {
-    console.log('catdata', category)
     return <Card {...category} key={category + index} />;
   });
-
-    
 
   return (
     <div className="card-container">
@@ -16,9 +13,5 @@ const MainContainer = ({categoryData}) => {
     </div>
   );
 };
-
-
-
-
 
 export  default MainContainer;

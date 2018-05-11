@@ -10,7 +10,7 @@ const fetchStarWarsData = async (category) => {
 
 const fetchPeopleData = async (info) => {
   const allPeople = info.results;
-  const unresolvedPeopleData = allPeople.map(async (person) => {
+  const unresolvedPeopleData = allPeople.map(async (person, index) => {
     const homeworldResponse = await fetch(person.homeworld);
     const parsedHomeworld = await homeworldResponse.json();
     const speciesResponse = await fetch(person.species);
@@ -20,7 +20,8 @@ const fetchPeopleData = async (info) => {
       name: person.name,
       homeworld: parsedHomeworld.name,
       species: parsedSpecies.name,
-      population: parsedHomeworld.population
+      population: parsedHomeworld.population,
+      id: `person${index}`
     };
   });
 
@@ -53,7 +54,7 @@ const fetchPlanetsData = async (info) => {
       population: planet.population,
       climate: planet.climate,
       residents: residentData,
-      id: `people${index}`
+      id: `resident${index}`
     };
   });
 
