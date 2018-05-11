@@ -1,14 +1,6 @@
 import React from 'react';
 import { fetchStarWarsData } from '../cleaner/index';
 
-// const fetchStarWarsData = async (category) => {
-//   const url = `https://swapi.co/api/${category}`;
-//   fetch(url);
-//   const response = await fetch(url);
-//   const info = await response.json();
-//   return info;
-// }; 
-
 const fetchPeopleData = async (info) => {
   const allPeople = info.results;
   const unresolvedPeopleData = allPeople.map(async (person, index) => {

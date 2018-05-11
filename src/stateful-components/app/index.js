@@ -13,6 +13,7 @@ class App extends Component {
       people: [],
       vehicles: [],
       planets: [],
+      favorites: [],
       currentCategory: ''
     };
   }
@@ -24,6 +25,12 @@ class App extends Component {
       currentCategory: category
     });
   }
+
+  displayFavorites = () => {
+    return (
+      <div>hey</div>
+    );
+  }
    
   render() {
     return (
@@ -33,7 +40,10 @@ class App extends Component {
           categoryData={this.state[this.state.currentCategory]}
         />}  
         <ScrollingText />
-        <Footer updateCards={this.updateCards}/>
+        <Footer 
+          updateCards={this.updateCards}
+          displayFavorites={this.displayFavorites}
+        />
       </div>
     );
   }

@@ -17,12 +17,17 @@ const Buttons = (props) => {
         onClick={() => props.updateCards('planets')}>
         Planets
       </button>
+      <button
+        onClick={() => props.displayFavorites('favorites')}>
+      favorites
+      </button>
     </div>
   );
 };
 
 Buttons.propTypes = {
-  updateCards: PropTypes.func.isRequired
+  updateCards: PropTypes.func.isRequired,
+  displayFavorites: PropTypes.func.isRequired
 };
 
 export default Buttons;
