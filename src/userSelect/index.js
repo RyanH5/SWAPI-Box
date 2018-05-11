@@ -1,6 +1,6 @@
 import { fetchStarWarsData, fetchPeopleData, fetchVehiclesData, fetchPlanetsData }  from '../api/index';
 
-const DataCleaner = async (category) => {
+const UserSelect = async (category) => {
   const info = await fetchStarWarsData(category);
 
   if (category === 'people') {
@@ -19,4 +19,4 @@ const DataCleaner = async (category) => {
   }
 };
 
-export { DataCleaner };
+export { UserSelect };

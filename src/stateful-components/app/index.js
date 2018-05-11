@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import ScrollingText from '../scrollingText/index';
-import { DataCleaner } from '../../cleaner/cleaner';
+import { UserSelect } from '../../cleaner/cleaner';
 import MainContainer from '../../stateless-components/mainContainer/index';
 import Header from '../../stateless-components/header/index';
 import Footer from '../../stateless-components/footer/index';
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   updateCards = async (category) => {
-    const selectedStarWarsData = await DataCleaner(category);
+    const selectedStarWarsData = await UserSelect(category);
     this.setState({
       [category]: selectedStarWarsData,
       currentCategory: category
