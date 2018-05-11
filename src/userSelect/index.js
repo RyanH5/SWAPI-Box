@@ -1,4 +1,5 @@
-import { fetchStarWarsData, fetchPeopleData, fetchVehiclesData, fetchPlanetsData }  from '../api/index';
+import { fetchPeopleData, fetchVehiclesData, fetchPlanetsData }  from '../api/index';
+import { fetchStarWarsData } from '../cleaner/index';
 
 const UserSelect = async (category) => {
   const info = await fetchStarWarsData(category);

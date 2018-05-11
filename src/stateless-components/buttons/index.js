@@ -18,11 +18,11 @@ const Buttons = (props) => {
         Planets
       </button>
     </div>
-  )
-}
+  );
+};
 
 Buttons.propTypes = {
   updateCards: PropTypes.func.isRequired
-}
+};
 
 export default Buttons;

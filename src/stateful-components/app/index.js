@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import ScrollingText from '../scrollingText/index';
-import { UserSelect } from '../../cleaner/cleaner';
+import { UserSelect } from '../../userSelect/index';
 import MainContainer from '../../stateless-components/mainContainer/index';
 import Header from '../../stateless-components/header/index';
 import Footer from '../../stateless-components/footer/index';
