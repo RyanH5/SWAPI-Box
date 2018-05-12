@@ -14,4 +14,7 @@ const MainContainer = ({categoryData}) => {
   );
 };
 
+// mock data
+// do snapshot test
+
 export  default MainContainer;
