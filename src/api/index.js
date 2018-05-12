@@ -4,10 +4,8 @@ import { fetchStarWarsData } from '../cleaner/index';
 const fetchPeopleData = async (info) => {
   const allPeople = info.results;
   const unresolvedPeopleData = allPeople.map(async (person, index) => {
-    const homeworldResponse = await fetch(person.homeworld);
-    const parsedHomeworld = await homeworldResponse.json();
-    const speciesResponse = await fetch(person.species);
-    const parsedSpecies = await speciesResponse.json();
+    const parsedHomeworld = await fetchPersonHomeworldData(person);
+    const parsedSpecies = await fetchPersonSpeciesData(person);
 
     return {
       name: person.name,
@@ -20,6 +18,35 @@ const fetchPeopleData = async (info) => {
 
   return Promise.all(unresolvedPeopleData);
 };
+
+const fetchPersonHomeworldData = async (person) => {
+  try {
+    const homeworldResponse = await fetch(person.homeworld);
+    if (homeworldResponse.status === 200) {
+      const parsedHomeworld = await homeworldResponse.json();
+      return parsedHomeworld;
+    } else {
+      throw new Error( homeworldResponse.status );
+    }
+  } catch (error) {
+    throw error;  
+  }
+};
+
+const fetchPersonSpeciesData = async (person) => {
+  try {
+    const speciesResponse = await fetch(person.species);
+    if (speciesResponse.status === 200) {
+      const parsedSpecies = await speciesResponse.json();
+      return parsedSpecies;
+    } else {
+      throw new Error( speciesResponse.status );
+    }
+  } catch (error) {
+    throw error;  
+  }
+};
+
 
 const fetchVehiclesData = async (info) => {
   const allVehicles = info.results;
@@ -60,7 +87,7 @@ const getResidents = async (planet) => {
     const parsedResidents = await residentsResponse.json();
     return parsedResidents.name;
   });
-  return Promise.all(unresolvedResidents)
+  return Promise.all(unresolvedResidents);
 };
 
 export {
