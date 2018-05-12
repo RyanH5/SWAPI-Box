@@ -7,3 +7,9 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+describe('updateCards', () => {
+  it('updates the cards in state on click', () => {
+    
+  })
+})

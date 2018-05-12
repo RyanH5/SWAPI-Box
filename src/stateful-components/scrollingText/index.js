@@ -26,10 +26,12 @@ class ScrollingText extends Component {
   render() {
     const { title, year, crawl } = this.state;
     return (
-      <div className="prologue">
-        <h1>{title}</h1>
-        <p>{crawl}</p>
-        <p>{year}</p>
+      <div className="star-wars">
+        <div className="crawl">
+          <h1>{title}</h1>
+          <p>{crawl}</p>
+          <p>{year}</p>
+        </div>
       </div>
     );
   }

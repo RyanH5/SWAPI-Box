@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Buttons = (props) => {
   return (
-    <div>
+    <div className="button-container">
       <button 
         onClick={() => props.updateCards('people')}>
         People

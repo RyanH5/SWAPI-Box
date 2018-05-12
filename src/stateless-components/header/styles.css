@@ -1,0 +1,12 @@
+.title-container {
+  /* background: black;
+  padding-top: 20px; */
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.swampi-title {
+  margin: auto;
+  background: black;
+}
