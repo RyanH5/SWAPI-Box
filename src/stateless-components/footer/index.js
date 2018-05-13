@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Buttons from '../buttons/index';
+import Navigation from '../navigation/index';
 
 const Footer = ({ updateCards, displayFavorites }) => {
   return (
     <div>
-      <Buttons 
+      <Navigation 
         updateCards={updateCards}
         displayFavorites={displayFavorites}
       />

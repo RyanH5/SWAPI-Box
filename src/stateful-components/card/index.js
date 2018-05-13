@@ -1,9 +1,16 @@
 import React from 'react';
 import './styles.css';
+import PropTypes from 'prop-types';
 
 const Card = (props) => {
   return (
     <div className="card">
+      <div 
+        onClick={() => {
+          props.addFavorite(props.cardData)
+        }}
+        className="favorites-block">
+      </div>
       <h2>{props.name}</h2>
       <h4>{props.homeworld}</h4>
       <h4>{props.species}</h4>
@@ -16,6 +23,18 @@ const Card = (props) => {
       <h4>{props.residents}</h4>
     </div>
   );
+};
+
+Card.propTypes = {
+  addFavorite: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  homeworld: PropTypes.string.isRequired
+  // name: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+
 };
 
 export default Card;
