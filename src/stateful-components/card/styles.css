@@ -6,3 +6,13 @@
   width: 25%;
   margin: 20px;
 }
+
+.favorites-block {
+  width: 40px;
+  top: 5px;
+  left: 146px;
+  position: relative;
+  height: 40px;
+  background-image: url(/static/media/favorites.3d8d1a1a.svg);
+  background-size: 40px;
+}

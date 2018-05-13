@@ -1,9 +1,11 @@
 import React from 'react';
 import './styles.css';
+import svg from '../../images/favorites.svg';
 
 const Card = (props) => {
   return (
     <div className="card">
+      <div className="favorites-block"></div>
       <h2>{props.name}</h2>
       <h4>{props.homeworld}</h4>
       <h4>{props.species}</h4>

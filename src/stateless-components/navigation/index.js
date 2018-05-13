@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-const Buttons = (props) => {
+const Navigation = (props) => {
   return (
     <div className="button-container">
       <button 
@@ -25,9 +25,9 @@ const Buttons = (props) => {
   );
 };
 
-Buttons.propTypes = {
+Navigation.propTypes = {
   updateCards: PropTypes.func.isRequired,
   displayFavorites: PropTypes.func.isRequired
 };
 
-export default Buttons;
+export default Navigation;
