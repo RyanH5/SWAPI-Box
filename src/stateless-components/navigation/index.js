@@ -19,7 +19,7 @@ const Navigation = (props) => {
       </button>
       <button
         onClick={() => props.displayFavorites('favorites')}>
-      favorites
+        Favorites
       </button>
     </div>
   );
@@ -27,7 +27,7 @@ const Navigation = (props) => {
 
 Navigation.propTypes = {
   updateCards: PropTypes.func.isRequired,
-  displayFavorites: PropTypes.func.isRequired
+  addFavorite: PropTypes.func.isRequired
 };
 
 export default Navigation;
