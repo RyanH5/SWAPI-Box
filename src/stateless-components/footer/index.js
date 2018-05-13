@@ -14,7 +14,7 @@ const Footer = ({ updateCards, displayFavorites }) => {
   );
 };
 
-Footer.PropTypes = {
+Footer.propTypes = {
   updateCards: PropTypes.func.isRequired
 };
 
