@@ -14,6 +14,12 @@ const MainContainer = ({
   
   if (currentCategory === 'favorites') {
     cards = favorites;
+    if (cards.length === 0) {
+      return (
+        <div className="card-container">
+          <h1>BE A GOOD JEDI, AND CHOOSE SOME FAVORITES!</h1>
+        </div>);
+    }
     displayCards = cards.map((category, index) => {
 
       return <Card 

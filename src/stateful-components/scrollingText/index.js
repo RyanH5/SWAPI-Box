@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
+import PropTypes from 'prop-types';
 
 class ScrollingText extends Component {
   constructor(props) {
@@ -23,19 +24,31 @@ class ScrollingText extends Component {
     this.setState({title, year, crawl});
   }
 
-  render() {
+  displayCrawl = () => {
     const { title, year, crawl } = this.state;
-    return (
-      <div className="star-wars">
+    if (this.props.currentCategory === '' ) {
+      return (
         <div className="crawl">
           <h1>{title}</h1>
           <p>{crawl}</p>
           <p>{year}</p>
         </div>
+      );
+    }
+  }
+
+  render() {
+    return (
+      <div className="star-wars">
+        {this.displayCrawl()}
       </div>
     );
   }
 }
+
+ScrollingText.propTypes = {
+  currentCategory: PropTypes.string
+};
 
 export default ScrollingText;
 
