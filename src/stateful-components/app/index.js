@@ -14,7 +14,8 @@ class App extends Component {
       vehicles: [],
       planets: [],
       favorites: [],
-      currentCategory: ''
+      currentCategory: '',
+      showPopup: false
     };
   }
 
@@ -37,6 +38,12 @@ class App extends Component {
       favorites: [...this.state.favorites, cardData]
     });
   }
+
+  togglePopup = () => {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+  }
    
   render() {
     return (
@@ -51,10 +58,14 @@ class App extends Component {
             currentCategory={this.state.currentCategory}
           />
         }  
-        <ScrollingText />
+        <ScrollingText 
+          currentCategory={this.state.currentCategory}
+        />
         <Footer 
           updateCards={this.updateCards}
           displayFavorites={this.displayFavorites}
+          togglePopup={this.togglePopup}
+
         />
       </div>
     );
