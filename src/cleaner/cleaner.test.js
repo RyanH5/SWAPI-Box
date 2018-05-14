@@ -199,17 +199,24 @@ describe('api', () => {
       });
     });
 
-    it('should throw and error if the status is not ok', () => {
-      window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.resolve({
-          status: 500
+    it('should throw and error if the status is not ok', 
+      async () => {
+        const mockParsedReseidents = {
+          name: "Lobot"
+        };
+        window.fetch = jest.fn().mockImplementation(() => {
+          return Promise.reject(new Error('mock error')
+          );
         });
-      });
-      const result = getResidents(mockUrl);
-      const expected = Error('500');
+        const mockPlanet = {
+          residents:
+        ["https://swapi.co/api/people/5/", "https://swapi.co/api/people/68/", "https://swapi.co/api/people/81/"]
+        };
+        const result = getResidents(mockPlanet);
+        const expected = new Error('mock error');
 
-      expect(result).rejects.toEqual(expected);
-    });
+        await expect(result).rejects.toEqual(expected);
+      });
 
     it('should throw an error if the response fails', async () => {
       window.fetch = jest.fn().mockImplementation(() => {

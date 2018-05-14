@@ -81,12 +81,16 @@ const cleanPlanetsData = async (info) => {
 };
 
 const getResidents = async (planet) => {
-  const unresolvedResidents = planet.residents.map(async (resident) => {
-    const residentsResponse = await fetch(resident);
-    const parsedResidents = await residentsResponse.json();
-    return parsedResidents.name;
-  });
-  return Promise.all(unresolvedResidents);
+  try {
+    const unresolvedResidents = planet.residents.map(async (resident) => {
+      const residentsResponse = await fetch(resident);
+      const parsedResidents = await residentsResponse.json();
+      return parsedResidents.name;
+    });
+    return Promise.all(unresolvedResidents);
+  } catch (error) {
+    throw error;  
+  }
 };
 
 export {

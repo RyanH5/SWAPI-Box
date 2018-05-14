@@ -20,9 +20,13 @@ ShallowWrapper {
       "children": Array [
         <Header />,
         false,
-        <ScrollingText />,
+        <ScrollingText
+          currentCategory=""
+/>,
         <Footer
           displayFavorites={[Function]}
+          favorites={Array []}
+          togglePopup={undefined}
           updateCards={[Function]}
 />,
       ],
@@ -44,7 +48,9 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "class",
-        "props": Object {},
+        "props": Object {
+          "currentCategory": "",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -55,6 +61,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "displayFavorites": [Function],
+          "favorites": Array [],
+          "togglePopup": undefined,
           "updateCards": [Function],
         },
         "ref": null,
@@ -73,9 +81,13 @@ ShallowWrapper {
         "children": Array [
           <Header />,
           false,
-          <ScrollingText />,
+          <ScrollingText
+            currentCategory=""
+/>,
           <Footer
             displayFavorites={[Function]}
+            favorites={Array []}
+            togglePopup={undefined}
             updateCards={[Function]}
 />,
         ],
@@ -97,7 +109,9 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "class",
-          "props": Object {},
+          "props": Object {
+            "currentCategory": "",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -108,6 +122,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "displayFavorites": [Function],
+            "favorites": Array [],
+            "togglePopup": undefined,
             "updateCards": [Function],
           },
           "ref": null,
