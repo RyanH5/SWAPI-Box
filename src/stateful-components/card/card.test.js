@@ -16,7 +16,7 @@ describe('Card', () => {
     terrain: 'dd',
     climate: 'ddd',
     residents: 'ddd'
-  }
+  };
 
   it('should match a snapshot', () => {
     wrapper = shallow(

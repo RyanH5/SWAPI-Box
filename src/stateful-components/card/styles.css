@@ -15,3 +15,15 @@
   background-image: url(/static/media/favorites.3d8d1a1a.svg);
   background-size: 40px;
 }
+
+@media (max-width: 720px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 60%;
+  }
+}
