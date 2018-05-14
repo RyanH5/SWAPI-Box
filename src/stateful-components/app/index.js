@@ -5,7 +5,6 @@ import { UserSelect } from '../../userSelect/index';
 import MainContainer from '../../stateless-components/mainContainer/index';
 import Header from '../../stateless-components/header/index';
 import Footer from '../../stateless-components/footer/index';
-import Card from '../../stateful-components/card/index';
 
 class App extends Component {
   constructor(props) {
@@ -19,10 +18,10 @@ class App extends Component {
     };
   }
 
-  displayFavorites = (category) => {
+  displayFavorites = () => {
     this.setState({
       currentCategory : 'favorites'
-    })
+    });
   }
 
   updateCards = async (category) => {

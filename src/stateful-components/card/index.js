@@ -7,7 +7,7 @@ const Card = (props) => {
     <div className="card">
       <div 
         onClick={() => {
-          props.addFavorite(props.cardData)
+          props.addFavorite(props.cardData);
         }}
         className="favorites-block">
       </div>
@@ -26,15 +26,18 @@ const Card = (props) => {
 };
 
 Card.propTypes = {
-  addFavorite: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  homeworld: PropTypes.string.isRequired
-  // name: PropTypes.string.isRequired,
-  // name: PropTypes.string.isRequired,
-  // name: PropTypes.string.isRequired,
-  // name: PropTypes.string.isRequired,
-  // name: PropTypes.string.isRequired,
-
+  addFavorite: PropTypes.func,
+  name: PropTypes.string,
+  homeworld: PropTypes.string,
+  species: PropTypes.string,
+  population: PropTypes.string,
+  model: PropTypes.string,
+  vehicleClass: PropTypes.string,
+  passengers: PropTypes.string,
+  terrain: PropTypes.string,
+  climate: PropTypes.string,
+  residents: PropTypes.array,
+  cardData: PropTypes.object
 };
 
 export default Card;

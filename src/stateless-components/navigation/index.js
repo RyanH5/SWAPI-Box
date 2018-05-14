@@ -27,7 +27,8 @@ const Navigation = (props) => {
 
 Navigation.propTypes = {
   updateCards: PropTypes.func.isRequired,
-  addFavorite: PropTypes.func.isRequired
+  addFavorite: PropTypes.func,
+  displayFavorites: PropTypes.func
 };
 
 export default Navigation;
