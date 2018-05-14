@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './styles.css';
+import laserfight from '../../images/laserfight.mp3';
 import PropTypes from 'prop-types';
 
 class ScrollingText extends Component {
@@ -41,6 +42,7 @@ class ScrollingText extends Component {
     return (
       <div className="star-wars">
         {this.displayCrawl()}
+        <audio src={laserfight} autoPlay></audio>
       </div>
     );
   }

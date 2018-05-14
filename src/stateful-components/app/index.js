@@ -15,7 +15,7 @@ class App extends Component {
       planets: [],
       favorites: [],
       currentCategory: '',
-      alreadyFavorite: false
+      isLoading: false
     };
   }
 
@@ -69,7 +69,7 @@ class App extends Component {
           updateCards={this.updateCards}
           displayFavorites={this.displayFavorites}
           togglePopup={this.togglePopup}
-
+          favorites={this.state.favorites}
         />
       </div>
     );
