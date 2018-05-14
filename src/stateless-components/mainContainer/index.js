@@ -18,7 +18,8 @@ const MainContainer = ({
       return (
         <div className="card-container">
           <h1>BE A GOOD JEDI, AND CHOOSE SOME FAVORITES!</h1>
-        </div>);
+        </div>
+      );
     }
     displayCards = cards.map((category, index) => {
 
