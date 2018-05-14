@@ -15,7 +15,7 @@ class App extends Component {
       planets: [],
       favorites: [],
       currentCategory: '',
-      showPopup: false
+      alreadyFavorite: false
     };
   }
 
@@ -34,15 +34,19 @@ class App extends Component {
   }
 
   addFavorite = (cardData) => {
-    this.setState({
-      favorites: [...this.state.favorites, cardData]
-    });
-  }
-
-  togglePopup = () => {
-    this.setState({
-      showPopup: !this.state.showPopup
-    });
+    let favorites = this.state.favorites;
+    if (favorites.includes(cardData)) {
+      const newFavs = favorites.filter(eachFavorite => {
+        return eachFavorite.name !== cardData.name;
+      });
+      this.setState({
+        favorites: [...newFavs]
+      }); 
+    } else {
+      this.setState({
+        favorites: [...this.state.favorites, cardData]
+      });      
+    }
   }
    
   render() {
