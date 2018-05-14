@@ -3,7 +3,11 @@ import Card from '../../stateful-components/card/index';
 import './styles.css';
 import PropTypes from 'prop-types';
 
-const MainContainer = ({categoryData, addFavorite, favorites, currentCategory}) => {
+const MainContainer = ({
+  categoryData, 
+  addFavorite, 
+  favorites, 
+  currentCategory}) => {
 
   let cards = [];
   let displayCards;
