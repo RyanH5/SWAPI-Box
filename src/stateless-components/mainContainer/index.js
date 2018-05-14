@@ -1,8 +1,9 @@
 import React from 'react';
 import Card from '../../stateful-components/card/index';
 import './styles.css';
+import PropTypes from 'prop-types';
 
-const MainContainer = ({categoryData, addFavorite, favorites,currentCategory}) => {
+const MainContainer = ({categoryData, addFavorite, favorites, currentCategory}) => {
 
   let cards = [];
   let displayCards;
@@ -10,6 +11,7 @@ const MainContainer = ({categoryData, addFavorite, favorites,currentCategory}) =
   if (currentCategory === 'favorites') {
     cards = favorites;
     displayCards = cards.map((category, index) => {
+
       return <Card 
         {...category} 
         key={category + index} 
@@ -35,7 +37,11 @@ const MainContainer = ({categoryData, addFavorite, favorites,currentCategory}) =
   );
 };
 
-// mock data
-// do snapshot test
+MainContainer.propTypes = {
+  categoryData: PropTypes.array,
+  addFavorite: PropTypes.func,
+  favorites: PropTypes.array,
+  currentCategory: PropTypes.string
+};
 
 export  default MainContainer;

@@ -15,7 +15,8 @@ const Footer = ({ updateCards, displayFavorites }) => {
 };
 
 Footer.propTypes = {
-  updateCards: PropTypes.func.isRequired
+  updateCards: PropTypes.func.isRequired,
+  displayFavorites: PropTypes.func.isRequired
 };
 
 export default Footer;

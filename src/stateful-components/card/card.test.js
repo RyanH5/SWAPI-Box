@@ -4,8 +4,8 @@ import { shallow, mount } from 'enzyme';
 
 describe('Card', () => {
   let wrapper;
-
-  const card = {
+  let mockAddFavorite = jest.fn();
+  let mockCategoryData = {
     homeworld: 'tatooine',
     species: 'human',
     name: 'Obi-Wan', 
@@ -16,12 +16,13 @@ describe('Card', () => {
     terrain: 'dd',
     climate: 'ddd',
     residents: 'ddd'
-  };
+  }
 
   it('should match a snapshot', () => {
     wrapper = shallow(
       <Card
-        card={card} />
+        cardData = {mockCategoryData}
+        addFavorite={mockAddFavorite} />
     );
 
     expect(wrapper).toMatchSnapshot();
